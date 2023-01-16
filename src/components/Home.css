@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100% 250px;
+    margin: 0;
+    background-color: #34364b;
+}
+
+:root{
+    --primary-color: #181824;
+    --secondary-color: #25273c;
+    --primary-text-color: #c1bed9;
+    --secondary-text-color: #fcfcfb;
+    --main-secondary-text-color: #61627e;
+    --border-bottom-color: #383a4f;
+    --checkbox-color: #34364b;
+    --placeholder-color: #61637a;
+    --boxshadow-color: #12141f;
+    --strikethrough-color: #4d4f64;    
+}
+
+.container{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: grey;
+}
+.container_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container_top h1{
+    /* letter-spacing: 10px; */
+    font-weight: 1050;
+    color: #ffffff;
+    text-align: center;
+}
+.task_inserter{
+    margin-top: 20px;
+}
+.toptask{
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0px 20px;
+}
+#newtask{
+    background: var(--secondary-color);
+    outline: none;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    caret-color: #4773d8;
+    padding: 0px;
+    width: 360px;
+}
+#newtask::placeholder{
+    color: var(--placeholder-color);
+}
+input[type="checkbox"] {
+    display: none;
+}
+  
+label {
+    margin-left: 35px;
+    position: relative;
+    line-height: 1.4;
+}
+label:hover{
+    cursor: pointer;
+}
+label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -34px;
+    top: -3px;
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + label::before{
+    transform: scale(1) rotateZ(0deg);
+}
+input[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+    color: var(--strikethrough-color);
+}
+label::after{
+    content: "";
+    border: 1px solid var(--checkbox-color);
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -35px;
+    top: -4px;
+    border-radius: 50%;
+}
+label:hover::after{
+    border: 1px solid #859fc5;
+}
+.toptask label:hover::after{
+    border: 1px solid #859fc5; 
+}
+.taskdisplay{
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    color: var(--primary-text-color);
+    box-shadow: 0 10px 10px var(--boxshadow-color);
+}
+
+.taskInfo{
+    padding: 17px 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-bottom-color);
+    color: var(--primary-text-color);
+    font-size: 14px;
+    height: 100px;
+    font-weight: 700;
+}
+.bottom_control{
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--main-secondary-text-color);
+    padding: 3px 0px;
+}
+.bottom_control ul{
+    display: flex;
+}
+.bottom_control ul li{
+    list-style: none;
+    padding: 0px 5px;
+}
+.bottom_control a:hover, #clear_completed:hover{
+    color: var(--secondary-text-color);
+    cursor: pointer;
+}
+.bottom_control a{
+    color: var(--main-secondary-text-color);
+    text-decoration: none;
+}
+#item_count{
+    cursor: default;
+}
+.active_toggle a{
+    color: #3e70d9;
+}
+
